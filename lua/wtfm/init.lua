@@ -22,6 +22,7 @@ M.yank_diagnostic = function()
 
     if len == 1 then
         vim.fn.setreg('+', diagnostics[1].message)
+        print('diagnostic yanked')
         return
     end
 
@@ -32,6 +33,7 @@ M.yank_diagnostic = function()
         end,
     }, function(_, i)
         vim.fn.setreg('+', diagnostics[i].message)
+        print('diagnostic yanked')
     end)
 end
 
